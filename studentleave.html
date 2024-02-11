@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style5.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<center>
+		<h1>Apply Leave(Student)</h1>
+		<fieldset>
+			<div class="container">
+				<form th:action="@{/addsleave}" th:object="${Studentleave}" method="post" onsubmit="showappliedlevesuccess()">
+					<table>
+						<tr>
+							<td>RollNo:- </td>
+							<td><input type="text" th:field="*{rollno}" placeholder="Enter RollNo" required></td>
+						</tr>
+						<tr>
+							<td>Name:- </td>
+							<td><input type="text" th:field="*{name}" placeholder="Enter Date" required></td>
+						</tr>
+
+						<tr>
+							<td>Date:- </td>
+							<td><input type="date" th:field="*{date}" placeholder="Enter Date" required></td>
+						</tr>
+
+						<tr>
+							<td>Day</td>
+							<td>
+								<select th:field="*{day}">
+									<option value="FullDay">Full Day</option>
+									<option value="HalfDay">Half Day</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td>
+								<input type="reset" value="Cancel">
+								<input type="submit" value="Apply">
+								<a th:href="@{/home}">Home</a>
+							</td>
+						</tr>
+					</table>
+				</form>
+
+			</div>
+	</center>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>College Management System</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+		<a class="navbar-brand" href="#">Student Details</a>
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<table class="table table-striped table-bordered">
+		<thead class="table-dark">
+			<a th:href="@{/addstudent}" class="btn btn-primary">Add New Student</a>
+			<tr>
+				<th> Roll No </th>
+				<th> Student First Name</th>
+				<th> Student Middle Name</th>
+				<th> Student LastName </th>
+				<th>AddRess </th>
+				<th> Phone </th>
+				<th> Email Id </th>
+				<th>Class X(%) </th>
+				<th>Class XII(%) </th>
+				<th> Adhar No</th>
+				<th>Course </th>
+				<th>Branch </th>
+				<th>Dob </th>
+				<th> Actions </th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="student: ${Stud}">
+				<td th:text="${student.rollno}"></td>
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.middlename}"></td>
+				<td th:text="${student.lastname}"></td>
+				<td th:text="${student.address}"></td>
+				<td th:text="${student.phone}"></td>
+				<td th:text="${student.email}"></td>
+				<td th:text="${student.classxper}"></td>
+				<td th:text="${student.classxiiper}"></td>
+				<td th:text="${student.adharno}"></td>
+				<td th:text="${student.course}"></td>
+				<td th:text="${student.branch}"></td>
+				<td th:text="${student.dob}"></td>
+				<td>
+
+
+					<a th:href="@{/student/edit/{id}(id=${student.rollno})}" class="btn btn-primary">Update</a>
+
+					<a th:href="@{/student/{id}(id=${student.rollno})}" class="btn btn-danger"
+						onsubmit="showdeletemessage()">Delete</a>
+
+				</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	</div>
+</body>
+
+</html>

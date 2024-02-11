@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Fee Details</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#">Fee Details</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container mt-3">
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<a th:href="@{/addfee}" class="btn btn-primary">Add New Deatils</a>
+				<a th:href="@{/home}" class="btn btn-primary">Go TO HOME</a>
+				<tr>
+					<th>Roll No</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Total Fee</th>
+					<th>Paid Fee</th>
+					<th>Remaining Fee</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fee : ${viewallfeedetails}">
+					<td th:text="${fee.RollNo}"></td>
+					<td th:text="${fee.Name}"></td>
+					<td th:text="${fee.Catagory}"></td>
+					<td th:text="${fee.TotalFee}"></td>
+					<td th:text="${fee.PaidFee}"></td>
+					<td th:text="${fee.RemainingFee}"></td>
+					<td th:text="${fee.Status}"></td>
+					<td>
+						<a th:href="@{/fee/edit/{id}(id=${fee.RollNo})}" class="btn btn-primary">Update</a>
+
+						<a th:href="@{/delete/{id}(id=${fee.RollNo})}" class="btn btn-danger btn-sm">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+
+	background-image: url("img4.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+
+.navbar-nav .nav-link {
+	font-weight: bold;
+	padding-left: 10px;
+
+	padding-right: 10px;
+	margin-right: 20px;
+	color: white;
+
+}
+
+.navbar-nav .nav-item #newInformationDropdownToggle {
+    color: white;
+}
+
+.dropdown-menu a {
+    color: white;
+    background-color:purple ;
+}
+#utilityDropdownToggle{
+	font-weight: bold;
+	padding-left: 10px;
+
+	padding-right: 10px;
+	margin-right: 20px;
+	color: white;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>View Contact Details</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+		<a class="navbar-brand" href="#">Contact Details</a>
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<table class="table table-striped table-bordered">
+		<thead class="table-dark">
+			<a th:href="@{/savecontact}" class="btn btn-primary">Add New Contact</a>
+			<a th:href="@{/home}" class="btn btn-primary">Go TO HOME</a>
+			<tr>
+				<th> ID </th>
+				<th> Name</th>
+				<th> Department</th>
+				<th> Position </th>
+				<th> MobileNo </th>
+				<th>Email </th>
+				<th>Actions </th>
+
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="contact: ${allcontact}">
+				<td th:text="${contact.id}"></td>
+				<td th:text="${contact.name}"></td>
+				<td th:text="${contact.Department}"></td>
+				<td th:text="${contact.position}"></td>
+				<td th:text="${contact.mobno}"></td>
+				<td th:text="${contact.email}"></td>
+
+				<td>
+
+					
+					<a th:href="@{/contact/edit/{id}(id=${contact.id})}" class="btn btn-primary">Update</a>
+
+					<a th:href="@{/contact/{id}(id=${contact.id})}" class="btn btn-danger"
+						onsubmit="showdeletemessage()">Delete</a>
+
+				</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	</div>
+</body>
+
+</html>

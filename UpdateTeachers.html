@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Teacher Details</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add other CSS or libraries if needed -->
+</head>
+
+<body>
+    <h2>Edit Teacher Details</h2>
+    <form th:action="@{/teacher/edit/{id}}" th:object="${teacher}" method="post">
+        <input type="hidden" th:field="*{employeeId}" />
+        <!-- Add other form fields with appropriate th:field attributes -->
+        <!-- For example: <input type="text" th:field="*{firstName}" /> -->
+
+        <button type="submit">Update Teacher</button>
+        <a th:href="@{/home}">Home</a>
+    </form>
+</body>
+
+</html>

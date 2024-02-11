@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Contact Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        fieldset {
+            width: 500px;
+        }
+
+        tr td {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .firstD {
+            display: block;
+        }
+
+        .second {
+            display: block;
+        }
+
+
+        form {
+            background-color: lightblue;
+        }
+
+        a {
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Update Contact Details</h1>
+        <fieldset>
+            <div class="container">
+                <form th:action="@{/contact/edit/{id}(id=${updatecontact.id})}" th:object="${updatecontact}" method="POST">
+                    <table>
+                        <div class="firstD">
+                            <tr>
+                                <td>ID:- </td>
+                                <td>
+                                    <span th:text="${updatecontact.id}"></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Name:- </td>
+                                <td><input type="text" th:field="*{name}" placeholder="Enter Name" required></td>
+                            </tr>
+
+                            <tr>
+                                <td>Department:- </td>
+                                <td><input type="text" th:field="*{Department}" placeholder="Enter Department" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Position:- </td>
+                                <td><input type="text" th:field="*{position}" placeholder="Enter Position" required></td>
+                            </tr>
+
+                            <tr>
+                                <td>MobileNo:- </td>
+                                <td><input type="text" th:field="*{mobno}" pattern="[0-9]{10}" maxlength="10"
+                                        placeholder="0000000000" required></td>
+                            </tr>
+
+                            <tr>
+                                <td>Email:- </td>
+                                <td><input type="email" th:field="*{email}" placeholder="example@gmail.com" required>
+                                </td>
+                            </tr>
+                        </div>
+                        <div class="second">
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="reset" value="Cancel">
+                                    <input type="submit" value="Submit">
+                                    <a th:href="@{/viewallcontact}">Back to Contacts</a>
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+                </form>
+            </div>
+        </fieldset>
+    </center>
+</body>
+
+</html>

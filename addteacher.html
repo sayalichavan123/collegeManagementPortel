@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style4.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<center>
+		<h1>Add New Teacher</h1>
+		<fieldset>
+			<div class="container">
+				<form th:action="@{/addteacher}" th:object="${Teacher}" method="post" onsubmit="showsuccessfullmsg()">
+					<table>
+						<div class="firstD">
+							<tr>
+								<td>EmployeeID:- </td>
+								<td>
+									<span th:text="${Teacher.employeeId}"></span>
+								</td>
+							</tr>
+
+
+
+
+							<tr>
+								<td>First name:- </td>
+								<td><input type="text" th:field="*{firstName}" placeholder="Enter Firstname" required></td>
+
+							</tr>
+
+							<tr>
+								<td>Middle Name:- </td>
+								<td><input type="text" th:field="*{middleName}" placeholder="Enter MiddleName" required>
+								</td>
+							</tr>
+							<tr>
+								<td>Last Name:- </td>
+								<td><input type="text" th:field="*{lastName}" placeholder="Enter LastName" required>
+								</td>
+							</tr>
+
+							<tr>
+								<td>Address:- </td>
+								<td><input type="text" th:field="*{address}" placeholder="Enter Address" required></td>
+							</tr>
+
+							<tr>
+								<td>Phone:- </td>
+								<td><input type="text" th:field="*{phone}" pattern="[0-9]{10}" maxlength="10"
+										placeholder="0000000000" required></td>
+							</tr>
+
+							<tr>
+								<td>Email:- </td>
+								<td><input type="email" th:field="*{email}" placeholder="example@gmail.com" required>
+								</td>
+							</tr>
+						</div>
+						<div class="second">
+							<tr>
+								<td>Clsss X %:- </td>
+								<td><input type="text" th:field="*{classXper}" placeholder="50" required></td>
+							</tr>
+
+							<tr>
+								<td>Class XII %:- </td>
+								<td><input type="text" th:field="*{classXiiper}" placeholder="50" required></td>
+							</tr>
+							<tr>
+								<td>DOB:- </td>
+								<td><input type="date" th:field="*{dob}" placeholder="26-12-2001" required></td>
+							</tr>
+
+							<tr>
+								<td>Aadhar No.:- </td>
+								<td><input type="text" th:field="*{adharNo}" pattern="[0-9]{12}" placeholder="000000000"
+										required></td>
+							</tr>
+
+							<tr>
+								<td>Education</td>
+								<td>
+									<select th:field="*{education}">
+										<option value="Eng">Engineerig</option>
+										l <option value="HM">Hotel Management</option>
+										<option value="ph">Pharmacy</option>
+										<option value="bca">BCA</option>
+									</select>
+								</td>
+
+							</tr>
+							<tr>
+								<td>Department</td>
+								<td>
+									<select th:field="*{department}">
+										<option value="Comp">Computer Science</option>
+										<option value="IT">IT</option>
+										<option value="mech">Mechanical</option>
+										<option value="civil">Civil</option>
+									</select>
+								</td>
+
+							</tr>
+
+							<tr>
+								<td></td>
+								<td> <input type="reset" value="Cancel">
+									<input type="submit" value="submit">
+									<a th:href="@{/home}">Home</a>
+								</td>
+								</td>
+
+							</tr>
+
+
+
+						</div>
+
+
+					</table>
+
+
+
+				</form>
+			</div>
+	</center>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+fieldset{
+    width: 500px;
+}
+
+tr td{
+    margin: 10px;
+    padding: 10px;
+}
+.firstD{
+    display: block;
+    
+    
+}
+
+.second{
+    display: block;
+}
+body{
+	background-image: url("third.jpg");
+    background-size: cover;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-attachment: fixed;
+	
+
+}
+form{
+	background-color: lightblue;
+}
+a{
+	background-color: burlywood;
+	
+}

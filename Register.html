@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Register Form</title>
+	<link rel="stylesheet" href="style2.css">
+	<script>
+        function showSuccessMessage() {
+            alert("Registration successful! You can now log in.");
+        }
+    </script>
+</head>
+
+<body>
+	<center>
+		<h1> Registeration Form</h1>
+	</center>
+	<div class="adi">
+<form th:action="@{/register}" th:object="${user}" method="post" onsubmit="showSuccessMessage()">
+			<table>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" th:field="*{firstname}" placeholder="Enter Firstname"></td>
+				</tr>
+				<tr>
+					<td>Middle Name</td>
+					<td><input type="text" th:field="*{middlename}" placeholder="Enter MiddleName"></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" th:field="*{lastname}" placeholder="Enter LastName"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" th:field="*{email}" placeholder="example@gmail.com" required></td>
+				</tr>
+				<tr>
+					<td>Phone No</td>
+					<td><input type="text" th:field="*{mobileno}" placeholder="88888888"></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<label><input type="radio" th:field="*{gender}" value="Male"> Male</label>
+						<label><input type="radio" th:field="*{gender}" value="Female"> Female</label>
+						<label><input type="radio" th:field="*{gender}" value="Other"> Other</label>
+					</td>
+				</tr>
+				<tr>
+    <td>City</td>
+    <td>
+        <select th:field="*{city}">
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Nashik">Nashik</option>
+        </select>
+    </td>
+</tr><tr>
+
+					<td>User Name</td>
+					<td><input type="text" th:field="*{username}" autocomplete="off"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" th:field="*{password}"></td>
+				</tr>
+				<tr>
+					<td><input type="reset" name="Reset"></td>
+					<td><input type="submit" name="submit" ></td>
+				</tr>
+				<tr>
+					<td>Already Registered? <a th:href="@{/login}">Login</a></td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>
